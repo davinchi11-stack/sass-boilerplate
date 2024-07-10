@@ -1,0 +1,330 @@
+
+.sec{
+    margin-top: fluid(60,85);
+}
+
+.welcome {
+    position: relative;
+    overflow: hidden;
+    height: fluid(300, 350);
+    background-color: black;
+    &::after{
+        content: "";
+        position: absolute;
+        height: fluid(80,160);
+        width: 100%;
+        background-color: black;
+        bottom: 0;
+        background: linear-gradient(to bottom , transparent, fade-out($dark, 0.5));
+    }
+    .img{
+       width: 50%;
+       height: inherit;
+       position: absolute;
+       right: 0;
+       @include media("<tablet"){
+        width: 100%;
+        right: initial;
+       }
+       
+       img{
+         object-fit: contain;
+         object-position: center;
+          height:100% ;
+          width: 100%;
+          position: absolute;
+          @include media("<tablet"){
+            object-position: top;
+           }
+
+       }
+
+    //    &::after{
+    //     content: "";
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //     // background-color: rgba(0, 0, 0, 0.336);
+    //     background: fade-out($dark, 0.5);
+    //     bottom: 0;
+    //     top: 0;
+    //       display: block;
+    //    }
+    }
+
+    .welcome-main{
+        position: relative;
+        color: $light;
+        height: fluid(300, 350);
+        @include flex(center,center, null,null);
+        @include media("<tablet"){
+            // align-items: end;
+            // justify-content: flex-end;
+            position: relative;
+            top: 50px;
+           }
+        font-size : fluid(17,19.5)
+    }
+}
+
+.welcome-solar{
+    position: relative;
+    padding: fluid(40, 70), 0;
+    @include media("<tablet"){
+        // display: none;
+       }
+    
+    .box{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        @include media("<tablet"){
+            // display: none;
+            flex-direction: column;
+           }
+        
+        gap: rem(20);
+
+        .box-one{
+            width: 25%;
+            @include media("<tablet"){
+                width: 100%;
+                display: none;
+               }
+            position: relative;
+            .img{
+                position: absolute;
+                height: 400px;
+                background-color: gray;
+                width: 280px;
+                top: rem(-250);
+                img{
+                    width: inherit;
+                    height: inherit;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+        .box-two{
+            width: 45%;
+            @include media("<tablet"){
+                width: 100%;
+                // display: none;
+               }
+            .typo{
+            padding-top: fluid(40, 55);
+            p{
+                line-height: rem(40);
+                font-size: fluid(25,30);
+                font-weight: 500;
+                color: $dark;
+                position: relative;
+                span{
+                    color: $orange;
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: rem(70);
+                    height: 2px;
+                    display: block;
+                    background: $orange;
+                    top: -15px;
+                    display: none;
+                }
+            }
+            .btn{
+                margin-top: rem(40);
+                button{
+                    background: $orange;
+                    padding: rem(10) rem(20);
+                    color: $light;
+                    text-transform: capitalize;
+                    box-shadow: 0px 4px 8px rgba($dark, 0.35);
+                    border-radius: 25px;
+                    transition: 0.25s ease-in-out;
+                    margin-bottom: rem(20);
+                    &:hover{
+                        background: $primary;
+                    }
+                }
+            }
+            }
+            // .show{
+            //     position: absolute;
+            //     display: flex;
+            //     left: rem(39);
+            //     gap: rem(20);
+            //     padding: rem(30) 0;
+            //     @include media("<tablet"){
+            //         position: initial;
+            //         flex-direction: column;
+            //         justify-content: center;
+            //         align-items: center;
+            //        }
+
+            //     .show-box{
+            //         @include media("<phone-medium"){
+            //             // height: 300px;
+            //             width: 250px;
+            //          }
+            //         width: 300px;
+            //         height: 200px;
+            //         border-radius:rem(20) ;
+            //         box-shadow: 0px 4px 6px rgba($dark, 0.65);
+                   
+            //         &.right,&.left{
+            //             background-color: $steel-blue;
+            //             text-align: center;
+            //             width: 250px;
+            //             position: relative;
+            //             &.left{
+            //                 background: $orange;
+            //             }
+            //             .main{
+            //                 display: flex;
+            //                 flex-direction: column;
+            //                 align-items:center;
+            //                 justify-content: center;
+            //                 gap: rem(2);
+            //                 height:inherit ;
+
+            //                 .type-main{
+            //                     // padding-top: 40px;
+            //                     color: #fff;
+            //                     p{
+            //                         margin-bottom: 10px;
+            //                         font-size: fluid(16,19);
+            //                         color: #fff;
+            //                         &.num{
+            //                             font-size: fluid(18,23);
+            //                             display: flex;
+            //                             align-items: center;
+            //                             justify-content: center;
+            //                         }
+            //                     }
+            //                 }
+            //                 .type-sub{
+            //                     color: #fff;
+            //                     p{
+            //                         font-size: fluid(14,16);
+            //                     }
+            //                 }
+            //             }
+                       
+            //         }
+            //         &.middle{
+            //             position: relative;
+            //             &::after{
+            //                 content: "";
+            //                 position: absolute;
+            //                 display:block ;
+            //                 width: 40px;
+            //                 height: 40px;
+            //                 background: $light;
+            //                 border-radius: 100%;
+            //                 top: 70px;
+            //                 left: -13px;
+            //             }
+            //             &::before{
+            //                 content: "";
+            //                 position: absolute;
+            //                 display:block ;
+            //                 width: 40px;
+            //                 height: 40px;
+            //                 background: $light;
+            //                 border-radius: 100%;
+            //                 top: 70px;
+            //                 // left: -13px;
+            //                 right: -18px;
+            //             }
+            //             img{
+            //                 height: inherit;
+            //                 object-fit:cover ;
+            //                 object-position: center;
+            //                 border-radius:inherit;
+                           
+            //             }
+            //         }
+            //     }
+            // }
+
+            .show{
+                padding-top: rem(50);
+                display: flex;
+                gap: rem(8);
+                @include media("<phone-medium"){
+                    flex-direction: column;
+                    align-items: center;
+                    gap: rem(15);
+                }
+
+                .type-main{
+                    display: flex;
+                    gap: rem(5);
+                    flex-direction: column;
+                    width: rem(250);
+                    text-align:center;
+                    background-color: $steel-blue;
+                    padding: 5px;
+                    color: #fff;
+                    border-radius: 4px;
+                    box-shadow: 0px 4px 6px #00000031;
+                    &.two{
+                        background: $blue-violet;
+                    }
+
+                    .num{
+                        font-size: rem(18);
+                    }
+                }
+            }
+        }
+        .box-three{
+            width: 30%;
+            @include media("<tablet"){
+                width: 100%;
+               }
+            padding-top: fluid(30,40);
+            .dropdown{
+            border-left: 1px solid #ccc;
+            padding-left: rem(20);
+            .drop-header{
+              @include flex(space-between, center, null, null);
+              margin-bottom: rem(20);
+              .drop-head{
+                @include flex(null, center, null, null);
+                cursor: pointer;
+                 gap: fluid(15,18);
+                 .icon{
+                    display: block;
+                    height: rem(38);
+                    width: rem(38);
+                    padding: 2px;
+                    background-color: $primary;
+                   @include flex(center, center, null, null);
+                    border-radius: 100%;
+                    box-shadow: 0px 4px 6px rgba($dark, 0.4);
+                 }
+                 h1{
+                    font-weight: 600;
+                    font-size: fluid(16, 25);
+                 }
+              }
+            }
+            .drop-content{
+              padding-left: 20px;
+              ul{
+                // border-left: 1px solid #ccc;
+                padding-left: 10px;
+                display: flex;
+                flex-direction:column ;
+                gap: rem(20);
+              }
+            }
+            }
+        }
+    }
+}
+

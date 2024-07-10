@@ -1,0 +1,37 @@
+
+.sub-welcome{
+    padding-top: fluid(80,85);
+    text-align: center;
+    overflow: hidden;
+    // background: red;
+    @include flex(center,center, null, null);
+    .sub{
+        @include flex(null,null, null, column);
+        gap: rem(25);
+     
+       .header-sub{
+        h1{
+            font-size: fluid(25,38);
+            font-weight: 700;
+            line-height: fluid(30,47);
+            width: fluid(300,950);
+            margin: auto;
+            .first{
+                color: $primary;
+            }
+            .second{
+                color: $sub;
+            }
+        }
+        // color: $primary;
+       }
+       .typo-sub{
+        p{
+            font-size: fluid(16,17);
+            color: $paragraph-gray;
+            width: fluid(300,480);
+            margin: auto;
+        }
+       }
+    }
+}
